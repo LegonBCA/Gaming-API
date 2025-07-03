@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "gaming-social-network-api",
+		"name": "Gaming Social Network API",
+		"description": "Colección completa para probar la API de Red Social de Juegos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "🏠 Welcome",
+			"item": [
+				{
+					"name": "Get API Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/",
+							"host": ["{{base_url}}"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "👤 Usuarios",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/usuarios",
+							"host": ["{{base_url}}"],
+							"path": ["usuarios"]
+						}
+					}
+				},
+				{
+					"name": "Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/usuarios/1",
+							"host": ["{{base_url}}"],
+							"path": ["usuarios", "1"]
+						}
+					}
+				},
+				{
+					"name": "Create New User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Sofia Rodriguez\",\n  \"nickname\": \"SofiaGamer\",\n  \"juegosFavoritos\": [1, 2, 4]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/usuarios",
+							"host": ["{{base_url}}"],
+							"path": ["usuarios"]
+						}
+					}
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Sofia Rodriguez Martinez\",\n  \"nickname\": \"SofiaGamer\",\n  \"juegosFavoritos\": [1, 2, 3, 4]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/usuarios/4",
+							"host": ["{{base_url}}"],
+							"path": ["usuarios", "4"]
+						}
+					}
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/usuarios/4",
+							"host": ["{{base_url}}"],
+							"path": ["usuarios", "4"]
+						}
+					}
+				},
+				{
+					"name": "❌ Create User - Invalid Nickname",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Test User\",\n  \"nickname\": \"AnaGamer\",\n  \"juegosFavoritos\": [1]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/usuarios",
+							"host": ["{{base_url}}"],
+							"path": ["usuarios"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "🎮 Juegos",
+			"item": [
+				{
+					"name": "Get All Games",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/juegos",
+							"host": ["{{base_url}}"],
+							"path": ["juegos"]
+						}
+					}
+				},
+				{
+					"name": "Get Games by Genre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/juegos?genero=FPS",
+							"host": ["{{base_url}}"],
+							"path": ["juegos"],
+							"query": [
+								{
+									"key": "genero",
+									"value": "FPS"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Game by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/juegos/1",
+							"host": ["{{base_url}}"],
+							"path": ["juegos", "1"]
+						}
+					}
+				},
+				{
+					"name": "Create New Game",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Valorant\",\n  \"genero\": \"FPS\",\n  \"desarrollador\": \"Riot Games\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/juegos",
+							"host": ["{{base_url}}"],
+							"path": ["juegos"]
+						}
+					}
+				},
+				{
+					"name": "Update Game",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Valorant\",\n  \"genero\": \"Tactical FPS\",\n  \"desarrollador\": \"Riot Games\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/juegos/5",
+							"host": ["{{base_url}}"],
+							"path": ["juegos", "5"]
+						}
+					}
+				},
+				{
+					"name": "Delete Game",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/juegos/5",
+							"host": ["{{base_url}}"],
+							"path": ["juegos", "5"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "🏆 Partidas",
+			"item": [
+				{
+					"name": "Get All Matches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/partidas",
+							"host": ["{{base_url}}"],
+							"path": ["partidas"]
+						}
+					}
+				},
+				{
+					"name": "Get Matches by Game",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/partidas?juego=1",
+							"host": ["{{base_url}}"],
+							"path": ["partidas"],
+							"query": [
+								{
+									"key": "juego",
+									"value": "1"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Matches by Player",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/partidas?jugador=1",
+							"host": ["{{base_url}}"],
+							"path": ["partidas"],
+							"query": [
+								{
+									"key": "jugador",
+									"value": "1"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Matches by Date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/partidas?fecha=2024-01-15",
+							"host": ["{{base_url}}"],
+							"path": ["partidas"],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "2024-01-15"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Match by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/partidas/1",
+							"host": ["{{base_url}}"],
+							"path": ["partidas", "1"]
+						}
+					}
+				},
+				{
+					"name": "Create New Match",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idJuego\": 2,\n  \"jugadores\": [1, 2, 3],\n  \"fecha\": \"2024-01-18T20:00:00.000Z\",\n  \"puntajes\": {\n    \"1\": 1500,\n    \"2\": 1200,\n    \"3\": 980\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/partidas",
+							"host": ["{{base_url}}"],
+							"path": ["partidas"]
+						}
+					}
+				},
+				{
+					"name": "Update Match",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"puntajes\": {\n    \"1\": 1600,\n    \"2\": 1300,\n    \"3\": 1050\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/partidas/4",
+							"host": ["{{base_url}}"],
+							"path": ["partidas", "4"]
+						}
+					}
+				},
+				{
+					"name": "Delete Match",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/partidas/4",
+							"host": ["{{base_url}}"],
+							"path": ["partidas", "4"]
+						}
+					}
+				},
+				{
+					"name": "❌ Create Match - Invalid Game",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idJuego\": 999,\n  \"jugadores\": [1, 2],\n  \"fecha\": \"2024-01-18T20:00:00.000Z\",\n  \"puntajes\": {\n    \"1\": 1500,\n    \"2\": 1200\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/partidas",
+							"host": ["{{base_url}}"],
+							"path": ["partidas"]
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000"
+		}
+	]
+} 
