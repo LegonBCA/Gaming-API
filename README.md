@@ -269,7 +269,7 @@ npm test
 
 Este proyecto está bajo la Licencia ISC - ver el archivo [LICENSE](LICENSE) para más detalles.
 
-## 👨‍💻 Autor
+## 👨‍💻 Autor : Benjamin Ignacio Contreras Alvial (LegonBCA)
 
 Desarrollado como ejemplo educativo para aprender APIs REST con Node.js
 
